@@ -5,6 +5,7 @@ namespace CashViewer_backend.DAL.Entities
 {
     public class BillProduct : Entity
     {
+        public Bill Bill { get; set; }
         public Product Product { get; set; }
 
         [Range(1, 100, ErrorMessage = "Quantity cant be less then 1 and more then 100")]
