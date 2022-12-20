@@ -19,4 +19,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CashViewer-backend.BAL\CashViewer-backend.BAL.csproj" />
+    <ProjectReference Include="..\CashViewer-backend.DAL\CashViewer-backend.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
