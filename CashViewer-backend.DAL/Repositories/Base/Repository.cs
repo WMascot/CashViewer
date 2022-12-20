@@ -13,7 +13,7 @@ namespace CashViewer_backend.DAL.Repositories.Base
             _db = db;
             _set = db.Set<T>();
         }
-        public IQueryable<T> Items => _set;
+        public virtual IQueryable<T> Items => _set;
 
         public T Add(T entity)
         {
