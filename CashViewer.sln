@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashViewer-backend.API", "CashViewer-backend.API\CashViewer-backend.API.csproj", "{9792F8FF-B51D-41A2-A76A-F5050BDBAA2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashViewer-backend.DAL", "CashViewer-backend.DAL\CashViewer-backend.DAL.csproj", "{9B0B509E-5FE5-4240-A442-DEA6AFDA49B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9792F8FF-B51D-41A2-A76A-F5050BDBAA2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9792F8FF-B51D-41A2-A76A-F5050BDBAA2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9792F8FF-B51D-41A2-A76A-F5050BDBAA2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0B509E-5FE5-4240-A442-DEA6AFDA49B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0B509E-5FE5-4240-A442-DEA6AFDA49B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0B509E-5FE5-4240-A442-DEA6AFDA49B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0B509E-5FE5-4240-A442-DEA6AFDA49B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
