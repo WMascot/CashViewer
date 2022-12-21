@@ -11,7 +11,8 @@ builder.Services
         var connectionString = builder.Configuration.GetConnectionString("MySQL");
         options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
     })
-    .AddRepositories();
+    .AddRepositories()
+    .AddServices();
 // Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
