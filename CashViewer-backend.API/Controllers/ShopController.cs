@@ -2,6 +2,7 @@
 using CashViewer_backend.DAL.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Type = CashViewer_backend.DAL.Entities.Type;
 
 namespace CashViewer_backend.API.Controllers
 {
@@ -78,6 +79,20 @@ namespace CashViewer_backend.API.Controllers
             {
                 _serviceShop.UpdateShop(shop);
                 return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("searchshop")]
+        public IActionResult SearchShop(string name, Type? type)
+        {
+            try
+            {
+                var shop = _serviceShop.SearchShop(name, type);
+                return Ok(shop);
             }
             catch (Exception ex)
             {
