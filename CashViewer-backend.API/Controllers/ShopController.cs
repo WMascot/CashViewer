@@ -2,7 +2,6 @@
 using CashViewer_backend.DAL.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Type = CashViewer_backend.DAL.Entities.Type;
 
 namespace CashViewer_backend.API.Controllers
 {
@@ -87,7 +86,7 @@ namespace CashViewer_backend.API.Controllers
         }
         [HttpGet]
         [Route("searchshop")]
-        public IActionResult SearchShop(string name, Type? type)
+        public IActionResult SearchShop(string name, ShopType? type)
         {
             try
             {

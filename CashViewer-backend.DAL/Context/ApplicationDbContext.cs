@@ -10,5 +10,6 @@ namespace CashViewer_backend.DAL.Context
         public DbSet<BillProduct> BillProducts { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Shop> Shops { get; set; }
+        public DbSet<ShopType> ShopTypes { get; set; }
     }
 }
