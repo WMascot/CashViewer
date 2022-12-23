@@ -36,7 +36,7 @@ namespace CashViewer_backend.API.Controllers
             }
         }
         [HttpPost]
-        [Route("createshop")]
+        [Route("create")]
         public IActionResult AddShop(Shop shop)
         {
             var shops = _serviceShop.GetAllShops();
@@ -57,7 +57,7 @@ namespace CashViewer_backend.API.Controllers
             }
         }
         [HttpDelete]
-        [Route("removeshop")]
+        [Route("remove")]
         public IActionResult RemoveShop(int id)
         {
             try
@@ -71,7 +71,7 @@ namespace CashViewer_backend.API.Controllers
             }
         }
         [HttpPut]
-        [Route("editshop")]
+        [Route("edit")]
         public IActionResult UpdateShop(Shop shop)
         {
             try
@@ -85,13 +85,49 @@ namespace CashViewer_backend.API.Controllers
             }
         }
         [HttpGet]
-        [Route("searchshop")]
+        [Route("search")]
         public IActionResult SearchShop(string name, ShopType? type)
         {
             try
             {
                 var shop = _serviceShop.SearchShop(name, type);
                 return Ok(shop);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("types")]
+        public IActionResult GetAllShopTypes() => Ok(_serviceShop.GetAllTypes());
+        [HttpPost]
+        [Route("types/add")]
+        public IActionResult AddShopType(ShopType type)
+        {
+            var types = _serviceShop.GetAllTypes();
+            if (types.SingleOrDefault(x => x.Name == type.Name) == null)
+            {
+                try
+                {
+                    _serviceShop.AddType(type);
+                    return Ok();
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+            return BadRequest("This type is already added");
+        }
+        [HttpDelete]
+        [Route("types/remove")]
+        public IActionResult RemoveShopType(int id)
+        {
+            try
+            {
+                _serviceShop.RemoveTypeById(id);
+                return Ok();
             }
             catch (Exception ex)
             {

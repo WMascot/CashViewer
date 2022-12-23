@@ -6,7 +6,12 @@ namespace CashViewer_backend.BAL.Services
     public class ServiceShop
     {
         private readonly IRepository<Shop> _shopsRepository;
-        public ServiceShop(IRepository<Shop> repository) => _shopsRepository = repository;
+        private readonly IRepository<ShopType> _shopTypesRepository;
+        public ServiceShop(IRepository<Shop> shopsRepository, IRepository<ShopType> shopTypesRepository)
+        {
+            _shopsRepository = shopsRepository;
+            _shopTypesRepository = shopTypesRepository;
+        }
         public IQueryable<Shop> GetAllShops() => _shopsRepository.Items;
         public Shop GetShopById(int id)
         {
@@ -32,5 +37,8 @@ namespace CashViewer_backend.BAL.Services
                 return shop;
             }
         }
+        public IQueryable<ShopType> GetAllTypes() => _shopTypesRepository.Items;
+        public void AddType(ShopType type) => _shopTypesRepository.Add(type);
+        public void RemoveTypeById(int id) => _shopTypesRepository.Remove(id);
     }
 }
