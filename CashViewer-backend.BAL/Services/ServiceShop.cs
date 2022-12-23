@@ -1,5 +1,6 @@
 ﻿using CashViewer_backend.DAL.Entities;
 using CashViewer_backend.DAL.Interfaces;
+using Type = CashViewer_backend.DAL.Entities.Type;
 
 namespace CashViewer_backend.BAL.Services
 {
@@ -17,5 +18,20 @@ namespace CashViewer_backend.BAL.Services
         public void AddShop(Shop shop) => _shopsRepository.Add(shop);
         public void RemoveShopById(int id) => _shopsRepository.Remove(id);
         public void UpdateShop(Shop shop) => _shopsRepository.Update(shop);
+        public Shop SearchShop(string name, Type? type)
+        {
+            if (type != null)
+            {
+                var shop = _shopsRepository.Items.FirstOrDefault(x => x.Name.Contains(name) && x.Type == type);
+                if (shop == null) throw new ArgumentNullException(nameof(shop));
+                return shop;
+            }
+            else
+            {
+                var shop = _shopsRepository.Items.FirstOrDefault(x => x.Name.Contains(name));
+                if (shop == null) throw new ArgumentNullException(nameof(shop));
+                return shop;
+            }
+        }
     }
 }
