@@ -23,11 +23,11 @@ namespace CashViewer_backend.API.Controllers
         }
         [HttpGet]
         [Route("details")]
-        public IActionResult GetShopById(int id)
+        public IActionResult Details(int id)
         {
             try
             {
-                var shop = _serviceShop.GetShopById(id);
+                var shop = _serviceShop.GetShopDetails(id);
                 return Ok(shop);
             }
             catch (Exception ex)
@@ -86,7 +86,7 @@ namespace CashViewer_backend.API.Controllers
         }
         [HttpGet]
         [Route("search")]
-        public IActionResult SearchShop(string name, ShopType? type)
+        public IActionResult SearchShop(string name, string? type)
         {
             try
             {
