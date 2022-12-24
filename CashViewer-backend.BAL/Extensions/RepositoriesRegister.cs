@@ -13,6 +13,7 @@ namespace CashViewer_backend.BAL.Extensions
                     .AddScoped<IRepository<Product>, ProductsRepository>()
                     .AddScoped<IRepository<Shop>, ShopsRepository>()
                     .AddScoped<IRepository<ShopType>, ShopTypesRepository>()
+                    .AddScoped<IRepository<ProductType>, ProductTypesRepository>()
             ;
     }
 }

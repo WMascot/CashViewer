@@ -9,6 +9,7 @@ namespace CashViewer_backend.DAL.Entities
         public string Name { get; set; }
         [RegularExpression(@"?!^0*$)(?!^0*\.0*$)^\d{1,5}(\.\d{1,3})?$")]
         public double Price { get; set; }
+        public ProductType Type { get; set; }
         public virtual Shop Shop { get; set; }
     }
 }

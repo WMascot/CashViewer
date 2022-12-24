@@ -8,6 +8,7 @@ namespace CashViewer_backend.DAL.Repositories
     public class ProductsRepository : Repository<Product>
     {
         public ProductsRepository(ApplicationDbContext db) : base(db) { }
-        public override IQueryable<Product> Items => base.Items.Include(item => item.Shop);
+        public override IQueryable<Product> Items => base.Items.Include(item => item.Shop)
+                                                               .Include(item => item.Type);
     }
 }

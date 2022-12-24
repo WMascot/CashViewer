@@ -61,7 +61,8 @@ namespace CashViewer_backend.BAL.Services
         {
             Id = product.Id,
             Name = product.Name,
-            Price = product.Price
+            Price = product.Price,
+            Type = product.Type.Name
         };
     }
 }
